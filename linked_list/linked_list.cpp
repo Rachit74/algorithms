@@ -1,12 +1,21 @@
 #include <iostream>
 using namespace std;
 
-class Node{
-    public:
-    int val;
-    Node *node_ptr;
+struct Node{
+    int data;
+    Node *next;
 
 };
+
+class LinkedList{
+    // pointer to the head node of the list
+    Node *head;
+
+    public:
+    // constructor inits head to null
+    LinkedList() : head(NULL) {}
+
+}
 
 int main() {
     Node n1;
