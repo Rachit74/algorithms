@@ -1,22 +1,22 @@
 #include <iostream>
 using namespace std;
 
-struct Node{
+struct Node
+{
+    /* data */
     int data;
     Node *next;
-
 };
 
-class LinkedList{
-    // pointer to the head node of the list
-    Node *head;
-
-    public:
-    // constructor inits head to null
-    LinkedList() : head(NULL) {}
-
-}
-
 int main() {
+
     Node n1;
+    n1.data = 1;
+    
+    Node n2;
+    n2.data = 2;
+    n2.next = nullptr;
+    n1.next = &n2;
+
+    return 0;
 }
