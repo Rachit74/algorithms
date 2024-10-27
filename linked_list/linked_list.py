@@ -25,8 +25,17 @@ class LinkedList:
             print(current.data)
             current = current.next
 
+    def list_length(self):
+        length = 0
+        current = self.head
+        while current is not None:
+            length += 1
+            current = current.next
+        print("List length is", length)
+
 linked_list = LinkedList()
 linked_list.append(1)
 linked_list.append(2)
 linked_list.append(3)
 linked_list.traverse()
+linked_list.list_length()
