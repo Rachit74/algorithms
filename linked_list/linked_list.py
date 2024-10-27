@@ -1,37 +1,32 @@
 class Node:
-    def __init__(self, data):
-        self.data = data  # The value of the node
-        self.next = None  # The pointer to the next node
-
+    def __init__(self, data, next=None):
+        self.data = data
+        self.next = next
 
 class LinkedList:
     def __init__(self):
-        self.head = None  # The head of the linked list
+        self.head = None
+        self.tail = None
 
-    # Method to add a node at the end of the linked list
-    def append(self, data):
-        new_node = Node(data)
-        if not self.head:
+    def append(self, value):
+        new_node = Node(data=value, next=None)
+        if self.head == None:
             self.head = new_node
-            return
-        last_node = self.head
-        while last_node.next:
-            last_node = last_node.next
-        last_node.next = new_node
+            self.tail = new_node
+        else:
+            self.tail.next = new_node
+            self.tail = new_node
+        
+        print("Appended!")        
+    
+    def traverse(self):
+        current = self.head
+        while current is not None:
+            print(current.data)
+            current = current.next
 
-    # Method to print the linked list
-    def print_list(self):
-        cur_node = self.head
-        while cur_node:
-            print(cur_node.data, end=" -> ")
-            cur_node = cur_node.next
-        print("None")
-
-
-ll = LinkedList()
-ll.append(1)
-ll.append(2)
-ll.append(3)
-ll.print_list()
-
-# 1 -> 2 -> 3 -> None
+linked_list = LinkedList()
+linked_list.append(1)
+linked_list.append(2)
+linked_list.append(3)
+linked_list.traverse()
